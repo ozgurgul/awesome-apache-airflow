@@ -47,8 +47,12 @@ This is a curated list of resources about [Apache Airflow](https://airflow.apach
 - [Bitnami Airflow Worker Docker image](https://github.com/bitnami/bitnami-docker-airflow-worker) - A secure and up-to-date docker image for Airflow Worker maintained by Bitnami. A CeleryExecutor docker-compose deployment is available [here](https://github.com/bitnami/bitnami-docker-airflow-worker/blob/master/docker-compose.yml).
 - [Distribute & deploy Apache Airflow via Python PEX files](https://github.com/msumit/airflow-pex) - Example repo with steps to bundle, distribute, & deploy Apache Airflow as PEX files.
 - [Introducing KEDA for Airflow](https://www.astronomer.io/blog/the-keda-autoscaler/) - How to use KEDA scaler system to enable autoscaling of celery workers based on data stored in the Airflow metadata database.
+- [Airflow-Component](https://github.com/noelmcloughlin/airflow-component#lightweight-federated-apache-airflow-installer) - Lightweight installer of federated Airflow-Airflow (RabbitMQ) reference architectrure on Compute node(s).
 
 ## Introductions and tutorials
+- [Apache Airflow Monitoring Metrics](https://youtu.be/xyeR_uFhnD4) - A two-part series by [maxcotec](https://maxcotec.com) on how you can utilize existing Airflow statsd metrics to monitor your airflow deployment on Grafana dashboard via Prometheus. Also learn how to create custom metrics.
+- [Introduction to Airflow](https://www.youtube.com/playlist?list=PLzKRcZrsJN_xcKKyKn18K7sWu5TTtdywh) - A web tutorial series by [maxcotec](https://maxcotec.com) for beginners and intermediate users of Apache Airflow.
+- [ETL with Apache Airflow for Data Analysis on Transaction Data](https://github.com/KimaruThagna/ml-pipelines-airflow). [Kimaru Thagana](https://www.linkedin.com/in/kimaru-thagana-4920b5181/) covers a practical case of doing an ETL process using Apache Airflow using a dummy ecommerce store's transactional, user and product data. The data is served via a flask API.
 - [Start Building Better Data Pipelines With apache Airflow](https://blog.delaplex.com/start-building-better-data-pipelines-with-apache-airflow) 2020-Oct - Naman Gupta covers the basics of Airflow and its concepts.
 - [Airflow Repository Template](https://github.com/soggycactus/airflow-repo-template) - A boilerplate repository for developing locally with Airflow, with linting & tests for valid DAGs and plugins. Just clone and run `make start-airflow` to get started! Add some CI jobs to deploy your code and you're done.
 - [How Apache Airflow Distributes Jobs on Celery workers](https://blog.sicara.com/using-airflow-with-celery-workers-54cb5212d405) - A short description of the steps taken by a task instance, from scheduling to success, in a distributed architecture.
@@ -127,6 +131,9 @@ or see the individual talks here:*
 
 
 ## Best practices, lessons learned and cool use cases
+- [How to Best Use DuckDB with Apache Airflow](https://medium.com/apache-airflow/how-to-best-use-duckdb-with-apache-airflow-63a079160d5d) - Tips on integrating [DuckDB](https://duckdb.org/) into Airflow jobs.
+- [Airflow Dag Python Package Management](https://www.youtube.com/watch?v=9pykChPp-X4&t=121s) - Managing python package dependencies across 100+ dags can become painful. It's hard to keep track of which packages are used by which dag, and hard to clean up during DAG removal/upgrade. Learn how KubernetesPodOperator and DockerOperator can fix this. 
+- [Airflow Dag Management & Versioning](https://youtu.be/a-4yRne3ba4) - Efficently manage DAGs release process by using Git Submodules
 - [Testing in Airflow Part 2](https://medium.com/@chandukavar/testing-in-airflow-part-2-integration-tests-and-end-to-end-pipeline-tests-af0555cd1a82) - [Chandu Kavar](https://twitter.com/chandukavar) and [Sarang Shinde](https://www.linkedin.com/in/sarang-shinde-219a4873/) have explained Integration Tests and End-to-End Pipeline Tests.
 - [Upgrading & Scaling Airflow at Robinhood](https://robinhood.engineering/upgrading-scaling-airflow-at-robinhood-5b625dfaa2ee) - [Abishek Ray](https://www.linkedin.com/in/abhishek-ray-29210145/) describes how Robinhood tackled upgrading its production Airflow while minimizing downtime.
 - [We're all using Airflow wrong and how to fix it](https://medium.com/bluecore-engineering/were-all-using-airflow-wrong-and-how-to-fix-it-a56f14cb0753) - [Jessica Laughlin](https://www.jldlaughlin.com/) of [Bluecore](https://www.bluecore.com/) shares three engineering problems associated with the Airflow design and how to solve them by using the [KubernetesPodOperator](https://github.com/apache/airflow/blob/v1-10-stable/airflow/contrib/operators/kubernetes_pod_operator.py) in two design patterns.
@@ -167,6 +174,10 @@ or see the individual talks here:*
 - [Improving Performance of Apache Airflow Scheduler](https://medium.com/databand-ai/improving-performance-of-apache-airflow-scheduler-507f4cb6462a) - A story of an adventure that allowed [Databand](https://databand.ai/) to speed up DAG parsing time 10 times
 - [How SSENSE is using Apache Airflow to do Data Lineage on AWS](https://medium.com/ssense-tech/principled-data-engineering-part-ii-data-governance-30297abb2446) - Exploring the fundamental themes of architecting and governing a data lake on AWS using Apache Arflow.
 - [Monitoring Airflow with Prometheus, StatsD and Grafana](https://databand.ai/blog/everyday-data-engineering-monitoring-airflow-with-prometheus-statsd-and-grafana/) - A guide on how to setup operational dashboards to production cluster by [Databand](http://databand.ai) and get high level visibility on Airflow.
+- [Complex tasks orchestration at Hurb with Apache Airflow](https://medium.com/hurb-engineering/complex-tasks-orchestration-at-hurb-with-apache-airflow-dcb423c4dee6) - This post shows how [Hurb](https://hurb.com) uses Apache Airflow to orchestrate complex tasks and how it leverages DAG dynamic creation to improve development speed.
+- [Automating data export from CrateDB to S3 with Apache Airflow](https://community.crate.io/t/cratedb-and-apache-airflow-part-one/901) A tutorial on how to automate recurrent queries in [CrateDB](https://crate.io/) with Apache Airflow, such as periodic data export to Amazon S3.
+- [Implementation of Data Retention Policy with CrateDB and Apache Airflow](https://community.crate.io/t/cratedb-and-apache-airflow-implementation-of-data-retention-policy/913) A step by step tutorial on how to implement effective data retention policy with [CrateDB](https://crate.io/) and Apache Airflow.
+- [Ingesting NYC Taxi Data From S3 Into CrateDB](https://community.crate.io/t/cratedb-and-apache-airflow-building-a-data-ingestion-pipeline/926) - Describes how to build a database ingestion pipeline in Airflow by loading CSV files from S3 into [CrateDB](https://crate.io/).
 
 ## Books, blogs, podcasts, and such
 - [Data Pipelines with Apache Airflow](https://www.manning.com/books/data-pipelines-with-apache-airflow) - A Manning book (Early Access September 2019) on Airflow.
@@ -201,6 +212,9 @@ or see the individual talks here:*
 - [Airflow Breeze - Development and Test Environment for Apache Airflow](https://youtu.be/4MCTXq-oF68) ![Activity badge](https://img.shields.io/youtube/views/4MCTXq-oF68) - Screencast showing how to use Breeze environment by [Jarek Potiuk](https://github.com/potiuk).
 
 ## Libraries, Hooks, Utilities
+- [Domino](https://github.com/Tauffer-Consulting/domino) - Domino is an open source Graphical User Interface platform for creating data and Machine Learning workflows (DAGs) with no-code, visually intuitive drag-and-drop actions. It is also a standard for publishing and sharing your Python code so it can be automatically used by anyone, directly in the GUI.
+- [Airflow-Helper](https://github.com/xnuinside/airflow-helper) - setting up Airflow Variables, Connections, and Pools from a YAML configuration file.
+- [AirFly](https://github.com/ryanchao2012/airfly) - Auto generate Airflow's dag.py on the fly.
 - [DEAfrica Airflow](https://github.com/digitalearthafrica/deafrica-airflow) - Airflow libraries used by [Digital Earth Africa](https://digitalearthafrica.org/), an humanitarian effort to utilize satellite imagery of Africa.
 - [Airflow plugins](https://github.com/airflow-plugins/) - Central collection of repositories of various plugins for Airflow, including mailchimp, trello, sftp, GitHub, etc.
 - [fileflow](https://github.com/industrydive/fileflow) - Collection of modules to support large data transfers between Airflow operators through either local file system or S3.  This addresses a gap where data is too large for XCOMs but too small or inconvenient for loading directly in the operator.  Built by [Industry Dive](https://www.industrydive.com/).
@@ -219,7 +233,14 @@ or see the individual talks here:*
 - [Airflow Ditto](https://github.com/angadsingh/airflow-ditto) - An extensible framework to do transformations to an Airflow DAG and convert it into another DAG which is flow-isomorphic with the original DAG, to be able to run it on different environments (e.g. on different clouds, or even different container frameworks - Apache Spark on YARN vs Kubernetes). Comes with out-of-the-box support for EMR-to-HDInsight-DAG transforms.
 - [gusty](https://github.com/chriscardillo/gusty) - Create a DAG using any number of YAML, Python, Jupyter Notebook, or R Markdown files that represent individual tasks in the DAG. gusty also configures dependencies, DAGs, and TaskGroups, features support for your local operators, and more. A fully containerized demo is available [here](https://github.com/chriscardillo/gusty-demo).
 - [Meltano](https://www.meltano.com) - Open source, self-hosted, CLI-first, debuggable, and extensible ELT tool that embraces [Singer](https://www.singer.io) for extraction and loading, leverages [dbt](https://www.getdbt.com) for transformation, and [integrates with Airflow for orchestration](https://meltano.com/#orchestration).
+- [ingestr](https://github.com/bruin-data/ingestr) - CLI tool to copy data between any source and destination with a single command. Use with BashOperator to load data from 50+ sources (Postgres, MongoDB, Salesforce, etc.) into your warehouse.
+- [Bruin](https://github.com/bruin-data/bruin) - Data ingestion and transformation layer with SQL and Python support. Ingests from 50+ sources (like Airbyte/Fivetran) and transforms (like dbt). Can be triggered from Airflow DAGs or run standalone. Includes built-in data quality checks.
 - [DAG checks](https://github.com/politools/dag-checks) - The dag-checks consist of checks that can help you in maintaining your Apache Airflow instance.
+- [Airflow DVC plugin](https://github.com/covid-genomics/airflow-dvc) - Plugin for open-source version-control system for data science and Machine Learning pipelines - [DVC](https://dvc.org/).
+- [Airflow Vars](https://github.com/omerzamir/airflow-vars) - A CLI for variables management, created for CD-Pipelines in order to allow robust and safe variables management.
+- [airflow-priority](https://github.com/airflow-laminar/airflow-priority) - Priority Tags (P1, P2, etc) for Airflow DAGs with automated alerting to Datadog, New Relic, Slack, Discord, and more
+- [airflow-config](https://github.com/airflow-laminar/airflow-config) - [Pydantic](https://pydantic.dev) / [Hydra](https://hydra.cc) based configuration system for DAG and Task arguments
+- [airflow-supervisor](https://github.com/airflow-laminar/airflow-supervisor) - Easy-to-use [supervisor](http://supervisord.org) integration for long running or "always on" DAGs
 
 ## Meetups
 - [Amsterdam Apache Airflow Meetup](https://www.meetup.com/Amsterdam-Airflow-meetup)
@@ -230,13 +251,14 @@ or see the individual talks here:*
 - [New York City Apache Airflow Meetup](https://www.meetup.com/NYC-Apache-Airflow-Meetup/)
 - [Paris Apache Airflow Meetup](https://www.meetup.com/Paris-Apache-Airflow-Meetup/)
 - [Portland Apache Airflow Meetup](https://www.meetup.com/Portland-Apache-Airflow-Meetup/)
-- [Tokyo Apache Airflow (incubating) Meetup](https://www.meetup.com/Tokyo-Apache-Airflow-incubating-Meetup/)
+- [Tokyo Apache Airflow Meetup](https://www.meetup.com/Tokyo-Apache-Airflow-incubating-Meetup/)
 - [Warsaw Apache Airflow Meetup](https://www.meetup.com/Warsaw-Airflow-Meetup)
 
 ## Commercial Airflow-as-a-service providers
 - [Google Cloud Composer](https://cloud.google.com/composer/) - Google Cloud Composer is a managed service built atop Google Cloud and Airflow.
 - [Qubole](http://docs.qubole.com/en/latest/user-guide/airflow/) - Qubole is mainly known as a service-and-support company for Apache Hive, but also provides Airflow as a component of its platform.
 - [Astronomer.io](https://www.astronomer.io/) - Astronomer provides complete ETL lifecycle solutions and appears to be entirely focused on providing Airflow-based products.
+- [AWS MWAA](https://aws.amazon.com/managed-workflows-for-apache-airflow/) - Amazon Managed Workflows for Apache Airflow (MWAA) is a managed orchestration service for Apache Airflow that makes it easier to set up and operate end-to-end data pipelines in the cloud at scale.
 
 ## Cloud Composer resources
 
@@ -251,12 +273,21 @@ or see the individual talks here:*
 ## Non-English resources
 - [Airflow Documentation-Chinese](https://airflow.apachecn.org) - (🇨🇳Chinese) [Apachecn](https://github.com/apachecn) has translated the Airflow official documentation.
 - [Gestion de Tâches avec Apache Airflow](http://ncrocfer.github.io/posts/gestion-de-taches-avec-apache-airflow/) - (🇫🇷French) [Nicolas Crocfer](https://github.com/ncrocfer) - Overview of Airflow, basic concepts and how to write and trigger a DAG.
+- [Airflowはすごいぞ！100行未満で本格的なデータパイプライン](https://qiita.com/hankehly/items/1f02a34740276d1b8f0f) - (🇯🇵Japanese) [Hank Ehly](https://github.com/hankehly) gives a comprehensive introduction to Airflow's main concepts, and demonstrates how to create a data pipeline in less than 100 lines of code.
 - [apache airflow 複数worker構成のalpine版docker imageを作った](https://sekailab.com/wp/2018/04/05/apache-airflow-multinode-alpine-docker-image/) - (🇯🇵Japanese) [Akio Ohta](https://github.com/Drunkar) walks through his [Docker image](https://hub.docker.com/r/drunkar/airflow-alpine/) for deploying an Alpine-based Airflow system.
+- [AirflowのタスクログをS3に保存する方法](https://qiita.com/hankehly/items/5e2493cdf2c95ae42449) - (🇯🇵Japanese) [Hank Ehly](https://github.com/hankehly) shows step-by-step how to configure sending task logs to AWS S3.
+- [【徹底解説】Airflow Fluentd Elasticsearch Docker の連携方法](https://qiita.com/hankehly/items/f525465bba8b47da0b76) - (🇯🇵Japanese) [Hank Ehly](https://github.com/hankehly) describes how to handle worker task logs with Fluentd, Elasticsearch and Docker.
 - [Apache Airflow – Kaikki Mitä Meillä On, Lähtee Dageista](https://www.solita.fi/blogit/apache-airflow-kaikki-mita-meilla-on-lahtee-dageista/) - (🇫🇮Finnish) [Olli Iivonen](https://www.linkedin.com/in/oiivonen/)'s overview of Airflow, concepts and Airflow's usage at [Solita](https://www.solita.fi/).
 - [Airflow - Automatizando seu fluxo de trabalho](https://speakerdeck.com/gilsondev/airflow-automatizando-seu-fluxo-de-trabalho) - (🇧🇷Portuguese) [Gilson Filho](https://github.com/gilsondev)'s overview of Airflow, concept and basic use.
 - [Panduan Dasar Apache Airflow](https://imamdigmi.github.io/post/tutorial-airflow-part-1/) - (🇮🇩Indonesian) [Imam Digmi](https://github.com/imamdigmi) - Overview of Airflow, concept, basic use with use case.
 - [Airflow](https://blog.duyet.net/tag/airflow) - (🇻🇳Vietnamese) [Duyet Le](https://github.com/duyet) - Overview of Airflow, concept, basic use with use case.
 - [Michael Yang's Airflow Chinese Blog Posts](https://blog.csdn.net/Young2018/article/details/109105370?spm=1001.2014.3001.5501) - Michael Yang's Chinese blog posts about data engineering with Apache Airflow, conclude basic tutorials and devops skills.
+
+## Sample projects
+
+- [Google Cloud Platform Public Datasets Pipelines](https://github.com/GoogleCloudPlatform/public-datasets-pipelines) - Cloud-native, data pipeline architecture for onboarding datasets to the Google Cloud Public Datasets Program.
+- [GitLab Data Team DAGs](https://gitlab.com/gitlab-data/analytics/-/tree/master/dags) - Several DAGs used to build analytics for the GitLab platform.
+- [deploy-airflow-on-ecs-fargate](https://github.com/hankehly/deploy-airflow-on-ecs-fargate) - Deploy to Amazon ECS Fargate. Demonstrates various features and configurations, such as autoscaling workers to zero, S3 remote logging and secret management.
 
 ## License
 
